@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 23, 2019 lúc 11:19 AM
--- Phiên bản máy phục vụ: 10.1.38-MariaDB
--- Phiên bản PHP: 7.1.27
+-- Host: 127.0.0.1
+-- Generation Time: Mar 12, 2019 at 03:46 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `ecommerce`
+-- Database: `ecommerce`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -35,7 +35,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`cateId`, `categoryName`, `description`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `categories` (`cateId`, `categoryName`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orderdetails`
+-- Table structure for table `orderdetails`
 --
 
 CREATE TABLE `orderdetails` (
@@ -58,7 +58,7 @@ CREATE TABLE `orderdetails` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orderproducts`
+-- Table structure for table `orderproducts`
 --
 
 CREATE TABLE `orderproducts` (
@@ -72,7 +72,7 @@ CREATE TABLE `orderproducts` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -86,111 +86,84 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`productId`, `productName`, `catId`, `price`, `quantity`, `description`, `picture`) VALUES
 (1, 'Size', 1, '150', 38, '', '1.jpg'),
-(2, 'Color', 3, '750', 100, 'khuyến mãi', '2.jpg'),
-(3, 'Di dong', 1, '23', 13, 'sdf', 'upload/2019032310033920190319023935Asus.jpg'),
-(4, 'asd', 1, '300000', 34, 'asgnsmhtu', 'upload/2019032310274820190316043904thien-nhien.jpg');
-
--- --------------------------------------------------------
+(2, 'Color', 3, '750', 100, 'khuyến mãi', '2.jpg');
 
 --
--- Cấu trúc bảng cho bảng `users`
---
-
-CREATE TABLE `users` (
-  `userId` int(5) NOT NULL,
-  `userName` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`cateId`);
 
 --
--- Chỉ mục cho bảng `orderdetails`
+-- Indexes for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
   ADD PRIMARY KEY (`orderId`,`productId`),
   ADD KEY `productId` (`productId`);
 
 --
--- Chỉ mục cho bảng `orderproducts`
+-- Indexes for table `orderproducts`
 --
 ALTER TABLE `orderproducts`
   ADD PRIMARY KEY (`orderId`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`productId`),
   ADD KEY `catId` (`catId`);
 
 --
--- Chỉ mục cho bảng `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`userId`);
-
---
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `orderdetails`
+-- AUTO_INCREMENT for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
   MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `orderproducts`
+-- AUTO_INCREMENT for table `orderproducts`
 --
 ALTER TABLE `orderproducts`
   MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `users`
---
-ALTER TABLE `users`
-  MODIFY `userId` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `orderdetails`
+-- Constraints for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
   ADD CONSTRAINT `orderdetails_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`),
   ADD CONSTRAINT `orderdetails_ibfk_2` FOREIGN KEY (`orderId`) REFERENCES `orderproducts` (`orderId`);
 
 --
--- Các ràng buộc cho bảng `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`catId`) REFERENCES `categories` (`cateId`);

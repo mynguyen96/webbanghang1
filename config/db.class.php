@@ -4,13 +4,11 @@
 	 */
 	class Db
 	{
-	    protected static $conn;
+	    public static $conn;
 
 	    public function __construct()
 	    {
-
 	    }
-
 	    public function connect()
 	    {
 	    	if(!isset(self::$conn)) {
