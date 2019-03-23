@@ -1,8 +1,8 @@
 <?php
-
+	
 	require_once('config/db.class.php');
 
-	class Product
+	class Product 
 	{
 	    public $productId, $productName, $cateId, $price, $quantity, $description, $picture;
 	    public function __construct($proName, $catId, $price, $qty, $dest, $pic)
@@ -14,13 +14,13 @@
 	        $this->description = $dest;
 	        $this->picture = $pic;
 	    }
-	    public function insert ()
+	    public function insert () 
 	    {
 	    	//xu ly upload hinh anh
 	    	$file_temp = $this->picture['tmp_name'];
 	    	$user_file = $this->picture['name'];
 	    	$timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
-	    	echo $filepath ="upload" .$timestamp. $user_file;
+	    	echo $filepath ="upload/" .$timestamp. $user_file;
 	    	if (move_uploaded_file($file_temp, $filepath)==false) {
 	    		return false;
 	    	}
@@ -30,7 +30,7 @@
 
 	    	$result = $db->query_excute($sql);
 	    	return $result;
-	    }
+	    } 
 
 	    public static function list_product()
 	    {
@@ -39,6 +39,25 @@
 	    	$result = $db->select_to_array($sql);
 	    	return $result;
 	    }
-
+	    //lấy danh sách san pham theo loai san pham
+	    public static function list_product_by_cateid($cateId){
+	    	$db = new Db();
+	    	$sql = "SELECT * FROM products WHERE catId={$cateId}";
+	    	$result =$db->select_to_array($sql);
+	    	return $result;
+	    }
+	    //lay ds sp cung loai
+	    public static function list_product_relate($cateId,$id){
+	    	$db = new Db();
+	    	$sql = "SELECT * FROM products WHERE catId={$cateId} AND productId!={$id}";
+	    	$result =$db->select_to_array($sql);
+	    	return $result;
+	    } 
+	    public static function get_product($id){
+	    	$db = new Db();
+	    	$sql = "SELECT * FROM products WHERE ProductId={$id}";
+	    	$result =$db->select_to_array($sql);
+	    	return $result;
+	    } 
 	}
 ?>
