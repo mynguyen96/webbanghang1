@@ -16,6 +16,7 @@
 			if(isset($_SESSION['user'])!="")
 			{
 				echo "<h2>Xin chào:".$_SESSION['user']."<a href='/webbanghang1/logout.php'>Logout</a></h2>";
+				echo "<h2><a href='/webbanghang1/doimatkhau.php'>Đổi mật khẩu</a></h2>";
 
 			}
 			else{
