@@ -3,7 +3,7 @@ require_once("entities/product.class.php");
 require_once("entities/category.class.php");
  ?>
  <?php
-include_once("intc/header.php");
+
 if(isset($_GET["productId"])){
 	$id =$_GET["productId"];
 	//lay gia tri dau tien trong mang ca doi tuong
@@ -16,9 +16,11 @@ if(isset($prod['productId'])) {
 	$prods_relate =Product::list_product_relate($prod["catId"],$id);
 	// echo print_r($prods_relate);
 ?>
-<div class="container text-center">
-	<div class="col-sm-3 panel panel-danger">
-		<h3 class="panel-heading">Danh mục</h3>
+<?php include_once("header.php") ?>
+<div class="container text-center" style="margin-top: 150px">
+	<div class="row">
+		<div class="col-sm-3 panel panel-danger">
+		<h3 class="panel-heading" style="margin-bottom: 20px">Danh mục</h3>
 		<ul class="list-group">
 			<?php
 			foreach ($cates as $item) {
@@ -28,22 +30,22 @@ if(isset($prod['productId'])) {
 			 ?>
 		</ul>
 	</div>
-	<div class="col-sm-9 panel panel-info">
-		<h3 class="panel-heading">Chi tiết sản phẩm</h3>
+	<div class="col-sm-9 panel panel-info" style="border: 1px solid #75838645 ;padding-bottom: 1em ;border-radius: 5px">
+		<h3 class="panel-heading" style="margin: 20px 0 50px 0 " >Chi tiết sản phẩm</h3>
 		<div class="row">
 			<div class="col-sm-6">
-				<img src="<?php echo "upload/".$prod['picture'];?>"class="img-responsive" style="width:100%" alt="Image">
+				<img src="<?php echo "".$prod['picture'];?>"class="img-responsive" style="width:100%" alt="Image">
 			</div>
 			<div class="col-sm-6">
 				<!--in thoong tin chi tiet sp-->
 				<div style="padding-left: 10px">
-					<h3 class="text-info">
+					<h3 class="text-info" style="font-size: 2em;font-weight: bold;">
 						<?php echo $prod["productName"]; ?>
 					</h3>
-					<p>
+					<p style="font-size: 1.75em">
 						Giá: <?php echo $prod["price"]; ?>
 					</p>
-					<p>
+					<p style="font-style: italic;">
 						Mô tả: <?php echo $prod["description"]; ?>
 					</p>
 					<p>
@@ -52,15 +54,16 @@ if(isset($prod['productId'])) {
 				</div>
 			</div>
 		</div>
-		<h3 class="panel-heading">Sản phẩm liên quan</h3>
+	</div>
+	<h3 class="panel-heading" style="margin: 30px 0 20px 0 ;text-align: center; width: 100%">Sản phẩm liên quan</h3>
 		<div class="row">
 			<?php
 			foreach ($prods_relate as $item) {
 				# code...
 			?>
 			<div class="col-sm-4">
-				<a href="/lab03/product_detail.php?productId=<?php echo $item["productId"]; ?>">
-					<img src="<?php echo"/lab03/".$item["picture"]; ?>" class="img-responsive" style="width: 100%" alt="Image">
+				<a href="/webbanghang1/product_detail.php?productId=<?php echo $item["productId"]; ?>">
+					<img src="<?php echo"".$item["picture"]; ?>" class="img-responsive" style="width: 100%" alt="Image">
 				</a>
 				<p class="text-danger"><?php echo $item['productName']; ?></p>
 				<p class="text-info"><?php echo $item['price']; ?></p>
@@ -71,6 +74,7 @@ if(isset($prod['productId'])) {
 			<?php } ?>
 		</div>
 	</div>
+	
 </div>
 <?php } else {
 	header("Location: not_found.php");

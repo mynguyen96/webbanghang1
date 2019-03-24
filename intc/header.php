@@ -2,15 +2,15 @@
 <html lang="vi">
 <head>
 	<meta charset="UTF-8">
-	<meta name="author" content="Mai">
-	<title>Quản Lý Bán Hàng</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href="/webbanghang1/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="/webbanghang1/bootstrap-4.3.1-dist/css/bootstrap-reboot.css" rel="stylesheet" media="screen">
+
 </head>
 <body>
+	
+	
 	<div id="wrapper">
-		<h2>Project Traning - Xây dựng website bán hàng</h2>
 		<?php
 			session_start();
 			if(isset($_SESSION['user'])!="")
@@ -24,9 +24,7 @@
 		 ?>
 		<div class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/webbanghang1/list_product.php"> Danh sách sản phẩm</a>
-					<a class="navbar-brand" href="/webbanghang1/add_product.php"> Thêm sản phẩm</a>
-				</div>
+				<a class="navbar-brand" href="/webbanghang1/list_product.php"> Danh sách sản phẩm</a>
+				<a class="navbar-brand" href="/webbanghang1/add_product.php"> Thêm sản phẩm</a>
 			</div>
 		</div>

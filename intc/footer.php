@@ -1,6 +1,6 @@
 	</div>
 	<footer>
-		&#169; 2019 - Mai - <a href="https://donghoxiteen.com" target="_blank">donghoxiteen.com</a>
+		&#169; 2019
 	</footer>
 	<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 </body>

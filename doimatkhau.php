@@ -1,7 +1,8 @@
-<?php require_once('header.php'); ?>
+
 <div class="row">
 	<?php	
 	   include("config/db.class.php");
+	   session_start();
 	   Db::connect();
 		if($_SERVER['REQUEST_METHOD']=='POST')
 		{
@@ -27,19 +28,35 @@
 		}
 
 	?>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/main.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/style.css">
+
+	<link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap-4.3.1-dist/css/bootstrap-reboot.css" rel="stylesheet">
+    <script type="text/javascript" src="bootstrap-4.3.1-dist/js/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap-4.3.1-dist/js/main.js"></script>
+</head>
+	<div class="col-md-4">
 		<form name="frmdoimatkhau" method="POST">
-			<h3>Đổi mật khẩu</h3>
+			<h3>Đổi Mật Khẩu</h3>
 			<div class="form-group">
-				<label>Tài khoản</label>
+				<label>Tài Khoản</label>
 				<input type="text" name="taikhoan" value="<?php echo $_SESSION['user']; ?>" class="form-control" disabled="true">
 			</div>
 			<div class="form-group">
-				<label>Mật khẩu cũ</label>
+				<label>Mật Khẩu Cũ</label>
 				<input type="password" name="matkhaucu" class="form-control">
 			</div>
 			<div class="form-group">
-				<label>Mật khẩu mới</label>
+				<label>Mật Khẩu Mới</label>
 				<input type="password" name="matkhaumoi" value="" class="form-control">
 			</div>
 			<div class="form-group">
@@ -50,4 +67,3 @@
 		</form>
 	</div>
 </div>
-<?php require_once('footer.php'); ?>
