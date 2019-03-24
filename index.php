@@ -9,34 +9,6 @@
 ?>
 <?php include_once("header.php") ?>
 
-	<!-- <header class="fixed_nav">
-		<div class="wrapper">
-			<div class="logo">
-				<a href="#"><img src="img/logo_small.png" alt="Fertile"></a>
-			</div>
-
-			<nav>
-				<ul>
-					<li><a href="/webbanghang1/index.php">Trang Chủ</a></li>
-					<li><a href="/webbanghang1/list_product.php">Sản Phẩm</a></li>
-					<?php 
-					session_start();
-					if(isset($_SESSION['user'])!="")
-					{
-						echo "<h2>Xin chào:".$_SESSION['user']."<a href='/lab03/logout.php'>Logout</a></h2>";
-
-					}
-					else{
-						echo "<li><a href='/webbanghang1/login.php'>Đăng Nhập</a></li>
-					<li><a href='/webbanghang1/register.php'>Đăng Kí</a></li>";
-					}
-					?>
-					
-				</ul>
-			</nav>
-		</div>
-	</header> --><!-- End fixed_nav -->
-
 	<section class="billboard">
 		<img src="img/wp2004258.jpg" alt="" title=""/>
 	</section><!-- End billboard -->
