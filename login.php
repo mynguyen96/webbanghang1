@@ -12,7 +12,6 @@
      include("config/db.class.php");
      Db::connect();
      if(isset($_POST['btn-signup'])){
-     var_dump($_POST);
      $username = $_POST['txtname'];
      $password = $_POST['txtpassword'];
      if($username == "" || $password ==""){

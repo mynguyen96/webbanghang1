@@ -18,7 +18,15 @@
 			<div class="logo">
 				<a href="index.php"><img src="img/logo_small.png" alt="Fertile"></a>
 			</div>
-
+			<div class="row">
+				<form class="navbar-form navbar-left" role="search">
+  				<div class="form-group">
+    				<input type="text" class="form-control" placeholder="Search">
+  				</div>
+  				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+			</div>
+			
 			<nav>
 				<ul>
 					<li><a href="/webbanghang1/index.php">Trang Chủ</a></li>
@@ -29,7 +37,6 @@
 					{
 						echo "<li>Xin chào : ".$_SESSION['user']." <a href='/webbanghang1/logout.php' style='color:red'>Đăng Xuất</a></li>";
 						echo "<li><a href='/webbanghang1/doimatkhau.php' style='color:red'>Đổi Mật Khẩu</a></li>";
-
 					}
 					else{
 						echo "<li><a href='/webbanghang1/login.php'>Đăng Nhập</a></li>
