@@ -25,7 +25,7 @@ if(isset($prod['productId'])) {
 			<?php
 			foreach ($cates as $item) {
 				# code...
-				echo "<li class='list-group-item'><a href=/webbanghang1/list_product.php?cateId=".$item["cateId"].">".$item["categoryName"]."</a></li>";
+				echo "<li class='list-group-item'><a href=/lab03/list_product.php?cateId=".$item["cateId"].">".$item["categoryName"]."</a></li>";
 			}
 			 ?>
 		</ul>
@@ -34,7 +34,11 @@ if(isset($prod['productId'])) {
 		<h3 class="panel-heading" style="margin: 20px 0 50px 0 " >Chi tiết sản phẩm</h3>
 		<div class="row">
 			<div class="col-sm-6">
+<<<<<<< HEAD
 				<img src="<?php echo "".$prod['picture'];?>"class="img-responsive" style="width:100%" alt="Image">
+=======
+				<img src="<?php echo "/lab03/upload/".$prod['picture'];?>"class="img-responsive" style="width:100%" alt="Image">
+>>>>>>> 675cf5557ea20d29eaabdb3f5628f97dce34b86f
 			</div>
 			<div class="col-sm-6">
 				<!--in thoong tin chi tiet sp-->

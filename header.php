@@ -14,6 +14,7 @@
     <script type="text/javascript" src="bootstrap-4.3.1-dist/js/main.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 	<header class="trasparent_nav" style="background: #c6e2ff">
 		<div class="wrapper">
 			<div class="logo">
@@ -41,3 +42,24 @@
 			</nav>
 		</div>
 	</header>
+=======
+	<div id="wrapper">
+		
+		<?php
+			session_start();
+			if(isset($_SESSION['user'])!="")
+			{
+				echo "<h2>Xin chào:".$_SESSION['user']."</h2>";
+				//echo "<h2>Xin chào:".$_SESSION['user']."<a href='/webbanhang1/doimatkhau.php'>test</a></h2>";
+				
+			}
+			else{
+				echo "<h2> Bạn chưa đăng nhập <a href='/lab03/login.php'>Login</a> -<a href='/webbanhang1/register.php'>Register</a></h2>";
+
+
+			}
+		 ?>
+	
+		<div class="navbar navbar-default navbar-static-top" role="navigation">
+			
+>>>>>>> 675cf5557ea20d29eaabdb3f5628f97dce34b86f
