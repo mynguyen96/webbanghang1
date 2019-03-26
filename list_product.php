@@ -36,9 +36,5 @@
 		</div>
 	</div>
 </div>
-<div class="container">
-	<div class="row">
-		<a href="add_product.php">Thêm Sản Phẩm</button>
-	</div>
-</div>
+
 

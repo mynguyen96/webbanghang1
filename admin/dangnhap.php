@@ -28,26 +28,45 @@ session_start();
    }
 }
  ?>
-  <form method="post" action="#" style="width:30%" style="margin-left:70px">
-    <div class="form-group row">
-      <label for="txtname" class="col-sm-2 form-control-label" style="margin-left:10px">UserName</label>
-      <div class="col-sm-10">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <meta name="description" content=""/>
+  <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/main.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/style.css">
+
+  <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-4.3.1-dist/css/bootstrap-reboot.css" rel="stylesheet">
+    <script type="text/javascript" src="bootstrap-4.3.1-dist/js/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap-4.3.1-dist/js/main.js"></script>
+</head>
+<div class="row" style="text-align: center;">
+  <form method="post" action="#" style="width:30% ">
+    
+      <h1 class="header">ĐĂNG NHẬP ADMIN</h1>
+      <div class="col-sm-10" style="padding-bottom: 10px">
         <input type="text" class="form-control" name="txtname" placeholder="User name">
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="txtpassword" class="col-sm-2 form-control-label" style="margin-left:10px">Password</label>
-      <div class="col-sm-10">
+    
+      
+    
+    
+      
+      <div class="col-sm-10" style="padding-bottom: 20px">
         <input type="password" class="form-control" name="txtpassword" placeholder="Password">
       </div>
-    </div>
+    
 
-    <div class="form-group row">
+    
       <div class="col-sm-offset-2 col-sm-10">
-        <input type="submit" name="btn-signup" value="Sign Up">
+        <input type="submit" name="btn-signup" value="Sign Up" class="btn btn-primary">
       </div>
-    </div>
+    
   </form>
+</div>
+  
 
   
   

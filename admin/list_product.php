@@ -16,7 +16,7 @@
 ?>
 <?php include_once("header.php") ?>
 
-<div class="container">
+<div class="container" style="padding-top: 100px">
 	<div class="row">
 		<a href="add_product.php">Thêm Sản Phẩm</a>
 	</div>

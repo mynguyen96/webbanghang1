@@ -29,14 +29,11 @@
 			<div class="title" style="display: inline-block;">
 				<h2 >Đây là trang admin</h2>
 				<a href="list_product.php">Danh sách sản phẩm</a>
-				<a href="add_product.php">Thêm sản phẩm</a>
 			</div>
 			<div class="action">
 				<h2>Xin chào <?php echo $_SESSION['admin_username']; ?></h2>
 				<a href="/webbanghang1/admin/logout.php">Logout</a>
 				<a href='/webbanghang1/admin/doimatkhau.php'>Đổi Mật Khẩu</a>
 			</div>
-			
-			
 		</div>
 	</header>

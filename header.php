@@ -21,7 +21,7 @@
 </head>
 <body>
 	<header class="trasparent_nav" style="background: #c6e2ff">
-		<div class="wrapper" style="height: 100%;">
+		<div class="wrapper" style="height: 120%;">
 			<div class="logo" style="padding: 20px 50px">
 				<a href="index.php"><img src="img/logo_small.png" alt="Fertile"></a>
 			</div>
@@ -32,7 +32,7 @@
 					margin: 0px;
 					"	>
 			<nav style="margin: 20px;" >
-				<ul>
+				<ul >
 					<li><a href="/webbanghang1/index.php">Trang Chủ</a></li>
 					<li><a href="/webbanghang1/list_product.php">Sản Phẩm</a></li>
 					<?php 
@@ -47,22 +47,21 @@
 						<li><a href='/webbanghang1/register.php'>Đăng Kí</a></li>";
 					}
 					?>
-
 				</ul>
-					
+				<table class="search-form" cellpadding="10" style="padding-top: 10px">
+					<tr>
+						<form action="search.php" method="post">
+							<input type="text" name="keyword" size="35%" value="<?php  if(isset($_POST['keyword'])) echo $_POST['keyword']; else echo "";  ?>"  placeholder="Nhập từ khóa cần tìm...">
+							<input class="btn btn-primary" type="submit" name="btnsearch" value="Tìm kiếm"/><br>
+						</form>
+					</tr>
+				</table>
 			</nav>
+
 		</div>
-		<div class="search" style="
-    transform: translateY(-50px) translate(300px);">
+		<div class="search" style="transform: translateY(-50px) translate(300px);">
 		
-		<table class="search-form" cellpadding="10">
-			<tr>
-					<form action="search.php" method="post">
-						<input type="text" name="keyword" size="35%" value="<?php  if(isset($_POST['keyword'])) echo $_POST['keyword']; else echo "";  ?>"  placeholder="Nhập từ khóa cần tìm...">
-						<input class="btn btn-primary" type="submit" name="btnsearch" value="Tìm kiếm"/><br>
-					</form>
-			</tr>
-		</table>
+		
 		</div>
 		<div class="box-info-cart" style="
     width: 150px;
