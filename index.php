@@ -2,12 +2,11 @@
 	require_once('entities/product.class.php');
 ?>
 <?php
-
-	
 		$prod = Product::list_product();
 
 ?>
-<?php include_once("header.php") ?>
+<?php include_once("header.php") ;
+	?>
 
 	<section class="billboard">
 		<img src="img/wp2004258.jpg" alt="" title=""/>
@@ -26,7 +25,7 @@
 							<p class="text-danger"><?php echo $item['productName']; ?></p>
 							<p class="text-info"><?php echo $item['price']; ?>đ</p>
 							<p>
-								<button type="button" class="btn btn-primary">Mua hàng</button>
+								<a href="/webbanghang1/product_detail.php?productId=<?php echo $item["productId"];?>" class="btn btn-primary">Xem chi tiết</a>
 							</p>
 						</div>
 					<?php } ?>
