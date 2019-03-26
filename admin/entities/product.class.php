@@ -32,6 +32,20 @@
 	    	return $result;
 	    } 
 
+	    public static function update ($id,$pro_name,$cate_id,$price,$quantity,$description)
+	    {
+	
+	    	//end upload file
+	    	$db = new Db();
+	    	$sql = "UPDATE `products` SET `productName` = '$pro_name' ,
+	    									`catId` = '$cate_id' ,
+	    									`price` = '$price' ,
+	    									`quantity` = '$quantity' ,
+	    									`description` = '$description' WHERE `products`.`productId` = $id";
+	    	$result = $db->query_excute($sql);
+	    	return $result;
+	    } 
+
 	    public static function list_product()
 	    {
 	    	$db = new Db();

@@ -51,7 +51,11 @@
 					  		<button type="submit" class="btn btn-secondary" name="btn-delete">Xóa</button>
 		        		</form>
 		        		
-					  	<button type="button" class="btn btn-secondary">Sửa</button>
+					  	<a href="edit_product.php?id=<?php echo $item['productId']?>" class="btn btn-secondary" style="
+																    height: 38px;
+																    margin: 15px 0px 0px 5px;
+																    border-radius: 5px;">
+																Sửa</a>
 					</div>
 				</td> 
 	      	</tr>

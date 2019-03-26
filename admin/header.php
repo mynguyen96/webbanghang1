@@ -17,28 +17,26 @@
 </head>
 <body>
 	<header class="trasparent_nav" style="background: #c6e2ff">
-		<div class="wrapper">
+		<div class="wrapper" style="    
+				display: flex;
+			    justify-content: space-around;
+			    height: 100%;
+			    align-items: center;">
 
-			<div class="logo">
+			<div class="logo" style="margin: 0px;">
 				<a href="/admin/index.php"><img src="img/logo_small.png" alt="Fertile"></a>
 			</div>
-
-			<nav >
-				<ul>
-					<?php
-						echo "<h2>Xin chào:".$_SESSION['user']."<a href='/webbanghang1/admin/logout.php'>Logout</a></h2>";
-						echo "<a href='/webbanghang1/admin/doimatkhau.php'>Đổi Mật Khẩu</a></h2>";
-						
-		 			?>
-
-					<h2 >Đây là trang admin</h2>
-					<li><a href="list_product.php">Danh sách sản phẩm</a></li>
-					<li><a href="add_product.php">Thêm sản phẩm</a></li>
-					<!-- <li><a href="/webbanghang1/index.php">Trang Chủ</a></li>
-					<li><a href="/webbanghang1/list_product.php">Sản Phẩm</a></li> -->
-					
-				</ul>
-			</nav>
+			<div class="title" style="display: inline-block;">
+				<h2 >Đây là trang admin</h2>
+				<a href="list_product.php">Danh sách sản phẩm</a>
+				<a href="add_product.php">Thêm sản phẩm</a>
+			</div>
+			<div class="action">
+				<h2>Xin chào <?php echo $_SESSION['admin_username']; ?></h2>
+				<a href="/webbanghang1/admin/logout.php">Logout</a>
+				<a href='/webbanghang1/admin/doimatkhau.php'>Đổi Mật Khẩu</a>
+			</div>
+			
 			
 		</div>
 	</header>
