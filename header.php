@@ -21,7 +21,7 @@
 </head>
 <body>
 	<header class="trasparent_nav" style="background: #c6e2ff">
-		<div class="wrapper">
+		<div class="wrapper" style="height: 100%;">
 			<div class="logo" style="padding: 20px 50px">
 				<a href="index.php"><img src="img/logo_small.png" alt="Fertile"></a>
 			</div>
@@ -49,19 +49,11 @@
 					?>
 
 				</ul>
-					<div class="box-info-cart" style=" margin-left: 500px; " onClick="window.location='checkout.php'">
-                <i class="fa fa-shopping-cart"></i>
-                <?php  $countCart = 0; 
-                    if(isset($_SESSION['cart'])) {
-                    foreach($_SESSION['cart'] as $key => $value) {
-                        $countCart += $value['qty'];
-                    }
-                } ?>
-                <span class="count-cart"><?= $countCart; ?></span>
-            </div>
+					
 			</nav>
 		</div>
-		<div class="search" style="transform: translateY(-25px) translateX(70px);">
+		<div class="search" style="
+    transform: translateY(-50px) translate(300px);">
 		
 		<table class="search-form" cellpadding="10">
 			<tr>
@@ -72,4 +64,17 @@
 			</tr>
 		</table>
 		</div>
+		<div class="box-info-cart" style="
+    width: 150px;
+    position: absolute;
+    right: 0;" onClick="window.location='checkout.php'">
+                <i class="fa fa-shopping-cart"></i>
+                <?php  $countCart = 0; 
+                    if(isset($_SESSION['cart'])) {
+                    foreach($_SESSION['cart'] as $key => $value) {
+                        $countCart += $value['qty'];
+                    }
+                } ?>
+                <span class="count-cart"><?= $countCart; ?></span>
+            </div>
 	</header>
