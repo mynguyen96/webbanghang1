@@ -32,17 +32,25 @@
 	    	return $result;
 	    } 
 
+	    public static function update ($id,$pro_name,$cate_id,$price,$quantity,$description)
+	    {
+	
+	    	//end upload file
+	    	$db = new Db();
+	    	$sql = "UPDATE `products` SET `productName` = '$pro_name' ,
+	    									`catId` = '$cate_id' ,
+	    									`price` = '$price' ,
+	    									`quantity` = '$quantity' ,
+	    									`description` = '$description' WHERE `products`.`productId` = $id";
+	    	$result = $db->query_excute($sql);
+	    	return $result;
+	    } 
+
 	    public static function list_product()
 	    {
 	    	$db = new Db();
 	    	$sql = "SELECT * FROM products";
 	    	$result = $db->select_to_array($sql);
-	    	return $result;
-	    }
-	    public static function list_product_search($keyword) {
-	    	$db = new Db();
-	    	$sql = "SELECT * FROM products WHERE productName LIKE '%{$keyword}%' ";
-	    	$result =$db->select_to_array($sql);
 	    	return $result;
 	    }
 	    //lấy danh sách san pham theo loai san pham
@@ -65,5 +73,12 @@
 	    	$result =$db->select_to_array($sql);
 	    	return $result;
 	    } 
+	    // Xóa sản phẩm
+	    public static function delete_product($id){
+	    	$db = new Db();
+	    	$sql = "DELETE FROM products WHERE ProductId={$id}";
+	    	$result =$db->query_excute($sql);
+	    	return 204;
+	    }
 	}
 ?>
