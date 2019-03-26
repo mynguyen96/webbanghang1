@@ -11,11 +11,11 @@
 			$matkhaumoi = $_POST['matkhaumoi'];
 			$xacnhanmatkhaumoi = $_POST['xacnhanmatkhaumoi'];
 			if($matkhaumoi == $xacnhanmatkhaumoi){
-				$sql = "select * from users where username = '" . $_SESSION['user'] .  "'";
+				$sql = "select * from admin where username = '" . $_SESSION['admin_username'] .  "'";
 	     	 	$query = mysqli_query(Db::$conn,$sql);
 	     	 	$result = mysqli_fetch_assoc($query);
 	     	 	if($result['password'] === $matkhaucu){
-	     	 		$sql = "Update `users` SET password= '" . $matkhaumoi .  "' WHERE userName = '" . $_SESSION['user'] .  "'";
+	     	 		$sql = "Update `admin` SET password= '" . $matkhaumoi .  "' WHERE userName = '" . $_SESSION['admin_username'] .  "'";
 	     	 		if($query = mysqli_query(Db::$conn,$sql)){
 	      				header("Location: index.php");
 	     	 		}	
@@ -51,7 +51,7 @@
 			<h3 style="text-align: center;">Đổi Mật Khẩu</h3>
 			<div class="form-group">
 				<label>Tài Khoản</label>
-				<input type="text" name="taikhoan" value="<?php echo $_SESSION['user']; ?>" class="form-control" disabled="true">
+				<input type="text" name="taikhoan" value="<?php echo $_SESSION['admin_username']; ?>" class="form-control" disabled="true">
 			</div>
 			<div class="form-group">
 				<label>Mật Khẩu Cũ</label>

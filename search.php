@@ -9,6 +9,29 @@
 		$result = Product::list_product_search($keyword);
 	}
 ?>
+<?php 
+	if(isset($_POST['add-to-cart'])) {
+        $id = $_POST['id'];
+        $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        if(!isset($_SESSION['cart'][$id]))
+        {
+            // tao moi gio hang
+            $_SESSION['cart'][$id]['name'] = $prod['productName'];
+            $_SESSION['cart'][$id]['image'] = $prod['picture'];
+            $_SESSION['cart'][$id]['price'] = $prod['price'];
+            $_SESSION['cart'][$id]['qty'] = (int)$_POST['qty'];
+            header('location: '.$link);
+            
+        }
+        else if (isset($_SESSION['cart'][$id]))
+        {
+            // cap nhat gio hang
+            $_SESSION['cart'][$id]['qty'] += 1;
+            header('location: '.$link);
+        } 
+    }
+
+ ?>
 <?php include_once("header.php") ?>
 <div class="container text-center" style="margin-top: 150px;">
 	<div class="col-sm-12 nhieusp">
@@ -24,7 +47,7 @@
 						<p class="text-danger"><?php echo $item['productName']; ?></p>
 						<p class="text-info"><?php echo $item['price']; ?>đ</p>
 						<p>
-							<button type="button" class="btn btn-primary">Mua hàng</button>
+							<button type="submit" name="add-to-cart" class="btn btn-danger">Mua hàng</button>
 						</p>
 					</div>
 				<?php } ?>

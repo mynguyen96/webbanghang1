@@ -16,7 +16,7 @@
     <h2 style="text-align: center; color: #5fba7d;"><?= $_SESSION['success']; unset($_SESSION['success']); ?></h2>
 <?php else: ?>
     <h2 style="text-align: center;">Giỏ hàng của bạn không có gì hết :( </h2>
-    <h3 style="text-align: center;">Tìm và mua sản phẩm ngay nào <a href="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/webbanghang1" ?>">Trang chủ</a></h3>
+    <h3 style="text-align: center;">Tìm và mua sản phẩm ngay nào !<a href="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/webbanghang1" ?>">Trang chủ</a></h3>
 <?php endif; ?>
 <?php } else { ?>
 

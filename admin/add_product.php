@@ -16,7 +16,7 @@
 		if(!$result) {
 			 header("Location: add_product.php?failure");
 		} else {
-			header("Location: index.php?inserted");
+			header("Location: list_product.php?inserted");
 		}
 	}
 ?>

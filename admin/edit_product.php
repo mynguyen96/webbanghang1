@@ -49,7 +49,7 @@
     <script type="text/javascript" src="bootstrap-4.3.1-dist/js/jquery.js"></script>
     <script type="text/javascript" src="bootstrap-4.3.1-dist/js/main.js"></script>
 </head>
-<h1 style="text-align: center; width: 100%">Thêm Sản Phẩm</h1>
+<h1 style="text-align: center; width: 100%">Sửa Sản Phẩm</h1>
 <form action="" method="post" enctype="multipart/form-data" style="
     width: 40%;
     margin: auto;">
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="lbltitle"></div>
 		<div class="lblinput">
-			<input class="form-control" type="submit" class="btn" value="Thêm sản phẩm" name="btnedit">
+			<input class="form-control" type="submit" class="btn" value="Sửa sản phẩm" name="btnedit">
 		</div>
 	</div>
 
