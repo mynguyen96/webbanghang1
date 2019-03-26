@@ -39,6 +39,12 @@
 	    	$result = $db->select_to_array($sql);
 	    	return $result;
 	    }
+	    public static function list_product_search($keyword) {
+	    	$db = new Db();
+	    	$sql = "SELECT * FROM products WHERE productName LIKE '%{$keyword}%' ";
+	    	$result =$db->select_to_array($sql);
+	    	return $result;
+	    }
 	    //lấy danh sách san pham theo loai san pham
 	    public static function list_product_by_cateid($cateId){
 	    	$db = new Db();
