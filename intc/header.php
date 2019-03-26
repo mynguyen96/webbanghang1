@@ -5,7 +5,6 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link href="/webbanghang1/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="/webbanghang1/bootstrap-4.3.1-dist/css/bootstrap-reboot.css" rel="stylesheet" media="screen">
-
 </head>
 <body>
 	
@@ -28,4 +27,5 @@
 				<a class="navbar-brand" href="/webbanghang1/list_product.php"> Danh sách sản phẩm</a>
 				<a class="navbar-brand" href="/webbanghang1/add_product.php"> Thêm sản phẩm</a>
 			</div>
+			
 		</div>
