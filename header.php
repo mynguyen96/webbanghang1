@@ -25,15 +25,13 @@
 			<div class="logo" style="padding: 20px 50px">
 				<a href="index.php"><img src="img/logo_small.png" alt="Fertile"></a>
 			</div>
-<<<<<<< HEAD
-			
 			<nav style="
     				display: flex;
     				width: 70%;
-					justify-content: space-around;"	>
-=======
-			<nav >
->>>>>>> 7105adfe464b6481f866609874c79de331c6f2f0
+					justify-content: space-around;
+					margin: 0px;
+					"	>
+			<nav style="margin: 20px;" >
 				<ul>
 					<li><a href="/webbanghang1/index.php">Trang Chủ</a></li>
 					<li><a href="/webbanghang1/list_product.php">Sản Phẩm</a></li>
@@ -51,7 +49,7 @@
 					?>
 
 				</ul>
-					<div class="box-info-cart" onClick="window.location='checkout.php'">
+					<div class="box-info-cart" style=" margin-left: 500px; " onClick="window.location='checkout.php'">
                 <i class="fa fa-shopping-cart"></i>
                 <?php  $countCart = 0; 
                     if(isset($_SESSION['cart'])) {
@@ -63,7 +61,7 @@
             </div>
 			</nav>
 		</div>
-		<div>
+		<div class="search" style="transform: translateY(-25px) translateX(70px);">
 		
 		<table class="search-form" cellpadding="10">
 			<tr>
