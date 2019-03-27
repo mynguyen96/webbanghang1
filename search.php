@@ -5,7 +5,6 @@
 						
  	if(isset($_POST['btnsearch'])){
  		$keyword = $_POST['keyword'];
- 		$sql = mysqli_query(Db::$conn, "SELECT * FROM products WHERE productName LIKE '%{$keyword}%' ");
 		$result = Product::list_product_search($keyword);
 	}
 ?>

@@ -27,12 +27,12 @@
 	      	<tr>
 	      		<!-- Tổng 100% -->
 		        <th width="5%">ID</th>
-		        <th width="20%">Tên sản phẩm</th>
-		        <th width="5%">Danh mục</th>
-		        <th width="20%">Giá</th>
+		        <th width="30%">Tên sản phẩm</th>
+		        <th width="10%">Danh mục</th>
+		        <th width="25%">Giá</th>
 		        <th width="10%">Số lượng</th>
-		        <th width="20%">Ảnh</th>
-		        <th width="20%">Chỉnh sửa</th>
+<!-- 		        <th width="20%">Ảnh</th>
+ -->		        <th width="20%">Chỉnh sửa</th>
 		     </tr>
 	    </thead>
 	    <tbody>
@@ -43,15 +43,14 @@
 		        <td><?php echo $item['catId']; ?></td>
 		        <td><?php echo number_format($item['price'],0,',','.'); ?> VNĐ</td>
 		        <td><?php echo $item['quantity']; ?></td>
-		        <td><img src="<?php echo $item['picture'];?>" class="img-responsive" style="width:30% ;" alt="Image"></td>
-		        <td>
+<!-- 		        <td><img src="<?php echo $item['picture'];?>" class="img-responsive" style="width:30% ;" alt="Image"></td>
+ -->		        <td>
 		        	<div class="btn-group" role="group" aria-label="Basic example">
 		        		<form action="" method="post">
 		        			<input type="hidden" name="idSPDelete" value="<?php echo $item['productId']?>" />
 					  		<button type="submit" class="btn btn-secondary" name="btn-delete">Xóa</button>
 		        		</form>
-		        		
-					  	<a href="edit_product.php?id=<?php echo $item['productId']?>" class="btn btn-secondary" style="
+		        		<a href="edit_product.php?id=<?php echo $item['productId']?>" class="btn btn-secondary" style="
 																    height: 38px;
 																    margin: 15px 0px 0px 5px;
 																    border-radius: 5px;">
@@ -60,7 +59,6 @@
 				</td> 
 	      	</tr>
 	      	<?php } ?>
-	      	<!-- Hi hữu vcl, quên bà nó xóa =))) -->
 	    </tbody>
   	</table>
   	</div>
